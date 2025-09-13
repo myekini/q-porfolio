@@ -41,7 +41,11 @@ export default function RootLayout({
           rel="preload"
           href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,300,400&display=swap"
           as="style"
-          onLoad="this.onload=null;this.rel='stylesheet'"
+          onLoad={(e) => {
+            const link = e.target as HTMLLinkElement;
+            link.onload = null;
+            link.rel = 'stylesheet';
+          }}
         />
         <noscript>
           <link
