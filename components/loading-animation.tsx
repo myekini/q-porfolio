@@ -30,7 +30,7 @@ export function LoadingAnimation() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="fixed inset-0 z-[9999] bg-white dark:bg-slate-900 flex items-center justify-center"
+          className="fixed inset-0 z-[9999] bg-background flex items-center justify-center"
         >
           <div className="text-center">
             {/* Logo */}
@@ -50,14 +50,14 @@ export function LoadingAnimation() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-3xl font-bold text-slate-900 dark:text-white mb-8"
+              className="text-3xl font-bold text-foreground mb-8"
             >
               Ayomide
             </motion.h1>
 
             {/* Progress Bar */}
             <div className="w-64 mx-auto mb-4">
-              <div className="h-1 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+              <div className="h-1 bg-muted rounded-full overflow-hidden">
                 <motion.div
                   className="h-full bg-gradient-to-r from-blue-600 to-purple-600 rounded-full"
                   initial={{ width: 0 }}
@@ -72,7 +72,7 @@ export function LoadingAnimation() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.4 }}
-              className="text-slate-600 dark:text-slate-400 text-sm"
+              className="text-muted-foreground text-sm"
             >
               Loading...
             </motion.p>

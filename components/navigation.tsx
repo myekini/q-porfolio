@@ -61,7 +61,7 @@ export function Navigation() {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? "bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm border-b border-slate-200/50 dark:border-slate-700/50" 
+          ? "bg-background/80 backdrop-blur-xl shadow-sm border-b border-border/20" 
           : "bg-transparent"
       }`}
     >
@@ -86,15 +86,15 @@ export function Navigation() {
                 onClick={() => scrollToSection(item.href)}
                 className={`relative px-3 py-2 text-sm font-medium transition-colors duration-200 ${
                   activeSection === item.href.replace("#", "")
-                    ? "text-blue-600 dark:text-blue-400"
-                    : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
                 }`}
               >
                 {item.label}
                 {activeSection === item.href.replace("#", "") && (
                   <motion.div
                     layoutId="activeIndicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600 dark:bg-blue-400"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
@@ -106,7 +106,7 @@ export function Navigation() {
               variant="ghost"
               size="icon"
               onClick={toggleDarkMode}
-              className="w-9 h-9 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="w-9 h-9 rounded-lg text-muted-foreground hover:bg-accent"
             >
               {isDarkMode ? (
                 <Sun className="h-4 w-4" />
@@ -122,7 +122,7 @@ export function Navigation() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden w-9 h-9 text-slate-600 dark:text-slate-300"
+                className="md:hidden w-9 h-9 text-muted-foreground"
               >
                 <Menu className="h-5 w-5" />
                 <span className="sr-only">Toggle menu</span>
@@ -140,19 +140,19 @@ export function Navigation() {
                     onClick={() => scrollToSection(item.href)}
                     className={`justify-start text-left ${
                       activeSection === item.href.replace("#", "")
-                        ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400"
-                        : "text-slate-600 dark:text-slate-300"
+                        ? "bg-primary/10 text-primary"
+                        : "text-muted-foreground"
                     }`}
                   >
                     {item.label}
                   </Button>
                 ))}
                 
-                <div className="pt-4 border-t border-slate-200 dark:border-slate-700">
+                <div className="pt-4 border-t border-border">
                   <Button
                     variant="ghost"
                     onClick={toggleDarkMode}
-                    className="justify-start text-left w-full text-slate-600 dark:text-slate-300"
+                    className="justify-start text-left w-full text-muted-foreground"
                   >
                     {isDarkMode ? (
                       <>

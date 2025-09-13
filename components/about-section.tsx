@@ -31,7 +31,7 @@ export function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-white dark:bg-slate-900">
+    <section id="about" className="py-24 bg-secondary/50">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
@@ -40,13 +40,13 @@ export function AboutSection() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground tracking-tighter">
             About Me
           </h2>
-          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto mb-8">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
             Passionate about creating digital experiences that matter
           </p>
-          <Separator className="w-24 mx-auto bg-gradient-to-r from-blue-500 to-purple-500" />
+          <Separator className="w-24 mx-auto bg-gradient-to-r from-primary to-primary/50" />
         </motion.div>
 
         <div className="max-w-6xl mx-auto">
@@ -58,15 +58,15 @@ export function AboutSection() {
           >
             {/* Story Content */}
             <div className="space-y-6">
-              <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
+              <h3 className="text-3xl font-bold text-foreground mb-6 tracking-tight">
                 My Design Journey
               </h3>
-              <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 As a Product Designer, I believe that great design starts with understanding people. 
                 Every project I work on begins with empathy and ends with solutions that not only 
                 look beautiful but solve real problems.
               </p>
-              <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
+              <p className="text-lg text-muted-foreground leading-relaxed">
                 I specialize in creating intuitive products that users love to interact with. 
                 My approach combines user research, creative design, and technical understanding 
                 to build products that make a difference.
@@ -81,16 +81,16 @@ export function AboutSection() {
                   initial={{ opacity: 0, x: 30 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                  className="flex items-center gap-4 p-6 bg-slate-50 dark:bg-slate-800 rounded-xl"
+                  className="flex items-center gap-4 p-6 bg-card rounded-xl border border-border/50 shadow-sm"
                 >
-                  <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
+                  <div className="p-3 bg-primary/10 rounded-lg text-primary">
                     {achievement.icon}
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold text-slate-900 dark:text-white">
+                    <h4 className="text-xl font-bold text-foreground">
                       {achievement.title}
                     </h4>
-                    <p className="text-slate-600 dark:text-slate-400">
+                    <p className="text-muted-foreground">
                       {achievement.description}
                     </p>
                   </div>
@@ -106,7 +106,7 @@ export function AboutSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mb-20"
           >
-            <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-12 text-center">
+            <h3 className="text-3xl font-bold text-foreground mb-12 text-center tracking-tight">
               Skills & Expertise
             </h3>
             
@@ -118,13 +118,13 @@ export function AboutSection() {
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: 0.6 + skillIndex * 0.2 }}
                 >
-                  <Card className="p-8 bg-slate-50 dark:bg-slate-800 border-slate-200 dark:border-slate-700">
+                  <Card className="p-8 bg-card border-border/50 shadow-sm">
                     <CardContent className="p-0">
                       <div className="flex items-center gap-3 mb-6">
-                        <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600 dark:text-blue-400">
+                        <div className="p-2 bg-primary/10 rounded-lg text-primary">
                           {skill.icon}
                         </div>
-                        <h4 className="text-xl font-bold text-slate-900 dark:text-white">
+                        <h4 className="text-xl font-bold text-foreground">
                           {skill.category}
                         </h4>
                       </div>
@@ -134,7 +134,7 @@ export function AboutSection() {
                           <Badge 
                             key={item} 
                             variant="secondary" 
-                            className="px-4 py-2 text-sm bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-600"
+                            className="px-4 py-2 text-sm bg-secondary text-secondary-foreground border-border/50"
                           >
                             {item}
                           </Badge>
@@ -154,17 +154,17 @@ export function AboutSection() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-center"
           >
-            <Card className="p-12 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-blue-200 dark:border-blue-800">
+            <Card className="p-12 bg-gradient-to-r from-primary/5 to-secondary/5 dark:from-primary/10 dark:to-secondary/10 border-primary/20 shadow-lg">
               <CardContent className="p-0">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-8">
-                  <Heart className="w-8 h-8 text-white" />
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-primary/70 rounded-full flex items-center justify-center mx-auto mb-8">
+                  <Heart className="w-8 h-8 text-primary-foreground" />
                 </div>
                 
-                <h3 className="text-3xl font-bold text-slate-900 dark:text-white mb-6">
+                <h3 className="text-3xl font-bold text-foreground mb-6 tracking-tight">
                   My Design Philosophy
                 </h3>
                 
-                <blockquote className="text-xl text-slate-600 dark:text-slate-300 italic leading-relaxed max-w-4xl mx-auto">
+                <blockquote className="text-xl text-muted-foreground italic leading-relaxed max-w-4xl mx-auto">
                   "Design is not just what it looks like and feels like. Design is how it works. 
                   I believe in creating experiences that are not only visually stunning but also 
                   functionally perfect, accessible to everyone, and meaningful to users."

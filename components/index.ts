@@ -1,5 +1,6 @@
 // UI Components
 export { Button } from "./ui/button";
+export { default as V0Button } from "./ui/v0-button";
 export { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 export {
   Dialog,
@@ -23,5 +24,4 @@ export { HeroSection } from "./hero-section";
 export { AboutSection } from "./about-section";
 export { ProjectsSection } from "./projects-section";
 export { ContactSection } from "./contact-section";
-export { Footer } from "./footer";
 export { LoadingAnimation } from "./loading-animation";

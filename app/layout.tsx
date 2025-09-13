@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { LoadingAnimation } from "@/components/loading-animation";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Ayomide - Product Designer",
@@ -32,7 +29,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="light">
-      <body className={`${inter.className} bg-background text-foreground`}>
+      <body className={`font-sans bg-background text-foreground`}>
         <LoadingAnimation />
         {children}
       </body>
