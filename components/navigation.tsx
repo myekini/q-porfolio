@@ -69,13 +69,11 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div 
-            className="text-2xl font-bold"
+            className="text-2xl font-bold text-foreground"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Ayomide
-            </span>
+            Ayomide
           </motion.div>
 
           {/* Desktop Navigation */}
