@@ -12,6 +12,8 @@ export function LoadingAnimation() {
     const checkFontsAndProgress = () => {
       document.fonts.ready.then(() => {
         console.log('All fonts loaded');
+        // Add font-loaded class to body to prevent FOUT
+        document.body.classList.add('fonts-loaded');
         // Complete loading after fonts are ready
         setTimeout(() => setIsLoading(false), 500);
       });
