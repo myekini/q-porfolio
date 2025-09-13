@@ -8,12 +8,21 @@ export function LoadingAnimation() {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Wait for fonts to load before completing loading animation
+    const checkFontsAndProgress = () => {
+      document.fonts.ready.then(() => {
+        console.log('All fonts loaded');
+        // Complete loading after fonts are ready
+        setTimeout(() => setIsLoading(false), 500);
+      });
+    };
+
     // Simulate loading progress
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          setTimeout(() => setIsLoading(false), 500);
+          checkFontsAndProgress();
           return 100;
         }
         return prev + Math.random() * 20;

@@ -36,6 +36,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning className="light">
+      <head>
+        <link 
+          rel="preload" 
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,300,400&display=swap" 
+          as="style" 
+        />
+      </head>
       <body className={`font-sans bg-background text-foreground`}>
         <LoadingAnimation />
         {children}
