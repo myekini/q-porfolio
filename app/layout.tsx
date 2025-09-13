@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { LoadingAnimation } from "@/components/loading-animation";
+import { FontPreloader } from "@/components/font-preloader";
 
 export const metadata: Metadata = {
   title: "Ayomide - Product Designer",
@@ -37,24 +38,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="light">
       <head>
+        {/* Fallback stylesheet for when JS is disabled */}
         <link
-          rel="preload"
+          rel="stylesheet"
           href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,300,400&display=swap"
-          as="style"
-          onLoad={(e) => {
-            const link = e.target as HTMLLinkElement;
-            link.onload = null;
-            link.rel = 'stylesheet';
-          }}
         />
-        <noscript>
-          <link
-            rel="stylesheet"
-            href="https://api.fontshare.com/v2/css?f[]=satoshi@700,500,300,400&display=swap"
-          />
-        </noscript>
       </head>
       <body className={`font-sans bg-background text-foreground`}>
+        <FontPreloader />
         <LoadingAnimation />
         {children}
       </body>
